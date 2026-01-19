@@ -20,6 +20,8 @@
     - Save the ".gitignore" file.
     - Create ".env" file
       Usually the .env file contains our local development secret information link to our account. E.g. API_KEY, Password. We don't share with anyone.
+    - Add "__pycache__" to also ignore the directory
+      python cache all the import modules at '__pycache__' folder during the development and debugging
 
 (6) Initialize git repository
     - Type "git init" and <ENTER>
@@ -30,6 +32,43 @@
 
 (8) Create "templates" folder
     - To store html files
+
+(9) Add file to git repository
+    - Type "git add ." and <ENTER>
+      '.' period means all files and folders
+      After successfully run, all the "U" sign will turn to "A" 
+
+(10) Commit file(s) to repository
+     - Type 'git commit -m "first commit"' and <ENTER>
+       To commits (check-in) files and folders into repository, and also provide the check-in comments
+       After successfully commit, all the files in green color will turn white.
+       But it haven't sent to github yet
+
+(11) Upload files to github
+     If you don't have github account, you need to create one.
+     Go to github and create a new repository, says "python weather"
+     After successfully created, go to (scroll down to) "...or push an existing repository from the command line"
+     something like this:
+     git remote add origin https://github.com/lcheewoei/python-weather.git
+     git branch -M main
+     git push -u origin main
+     Copy all 3 commands and go to python terminal right click, to paste line by line and hit <ENTER>
+
+(12) Go to render.com to deploy the webapp
+     https://www.render.com
+     If  you don't have account, can sign up for free.
+     Link the render account to my github account and authorize the access.
+     It will pull these files from our github repository into render.com
+     - In render.com dashboard, after successfully login, go to create new web services
+     - You will see a list of your github repository, connect the "python-weather" from github to the service.
+     - Then configure the web service like Name.
+     - Update the Build command to "pip install -U pip && pip install -r requirements.txt" 
+     - Update the Start command "python3 server.py"
+     - Scroll down to "Environment Variables" section, to add our environment variable
+       - Add API_KEY <-- API key to access Weather API
+       - Add PYTHON_VERSION  <-- render needs to know what version of python we are using.
+     - Sroll all the way down to Deploy the web service! 
+
 
 (x) Deactivate virtual environment
     - Type "deactivate" and <ENTER>
