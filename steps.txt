@@ -1,0 +1,36 @@
+(1) Create virtual environment
+    - Type "py -m venv .venv" and <ENTER>
+      This will create ".venv" folder
+
+(2) Activate the created virtual environment in Step (1)
+    - Type ".venv/Scripts/Activate.ps1" and <ENTER>
+      This will activate the virtual environment and show "(.venv)"
+
+(3) Install packages for the project
+    - Type "pip install requests python-dotenv Flask" and <ENTER>
+      This will install 3 libraries. Pay attention to [notice] statement and follow its instruction to complete the overall installation.
+
+(4) Deploy the project to github - create requirements
+    - Type "pip freeze > requirements.txt" and <ENTER>
+      This will create "requirements.txt" file
+
+(5) Do not send virtual environment (.venv) and local development environment (.env) to github
+    - Create ".gitignore" file, git will ignore uploading directory listed inside the file.
+    - Add ".venv" and ".env" (into a newline) 
+    - Save the ".gitignore" file.
+    - Create ".env" file
+      Usually the .env file contains our local development secret information link to our account. E.g. API_KEY, Password. We don't share with anyone.
+
+(6) Initialize git repository
+    - Type "git init" and <ENTER>
+
+(7) Create "static" folder
+    - Inside the "static" folder to store non-changes file (css, js, images,...)
+    - Create "css" subfolder
+
+(8) Create "templates" folder
+    - To store html files
+
+(x) Deactivate virtual environment
+    - Type "deactivate" and <ENTER>
+      
